@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>101 Hábitos — Política de Privacidad y Términos de Uso</title>
+    <style>
+        :root {
+            --primary: #6366F1;
+            --primary-dark: #4F46E5;
+            --text: #1F2937;
+            --text-light: #6B7280;
+            --bg: #F9FAFB;
+            --card: #FFFFFF;
+            --border: #E5E7EB;
+            --radius: 12px;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        /* ── Header ─────────────────────────────────────── */
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 48px 24px 40px;
+            text-align: center;
+        }
+
+        header .logo {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        header p {
+            font-size: 0.95rem;
+            opacity: 0.85;
+        }
+
+        /* ── Nav de secciones ───────────────────────────── */
+        nav.toc {
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 24px;
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        nav.toc a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 4px 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        nav.toc a:hover {
+            border-color: var(--primary);
+        }
+
+        /* ── Contenido principal ────────────────────────── */
+        main {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 40px 24px 80px;
+        }
+
+        /* ── Sección ────────────────────────────────────── */
+        section {
+            background: var(--card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            padding: 40px;
+            margin-bottom: 32px;
+        }
+
+        section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .section-date {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-bottom: 28px;
+        }
+
+        h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            margin: 28px 0 8px;
+        }
+
+        h3:first-of-type {
+            margin-top: 20px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            color: #374151;
+        }
+
+        ul,
+        ol {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        li {
+            margin-bottom: 6px;
+            color: #374151;
+        }
+
+        /* ── Tabla de terceros ──────────────────────────── */
+        .table-wrap {
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        thead th {
+            background: #F3F4F6;
+            color: var(--text);
+            font-weight: 700;
+            padding: 10px 14px;
+            text-align: left;
+            border: 1px solid var(--border);
+        }
+
+        tbody td {
+            padding: 9px 14px;
+            border: 1px solid var(--border);
+            vertical-align: top;
+        }
+
+        tbody tr:nth-child(even) td {
+            background: #F9FAFB;
+        }
+
+        tbody td a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        tbody td a:hover {
+            text-decoration: underline;
+        }
+
+        /* ── Caja de aviso ──────────────────────────────── */
+        .notice {
+            background: #EEF2FF;
+            border-left: 4px solid var(--primary);
+            border-radius: 6px;
+            padding: 14px 18px;
+            margin: 20px 0;
+            font-size: 0.92rem;
+            color: #3730A3;
+        }
+
+        /* ── Contacto ───────────────────────────────────── */
+        .contact-card {
+            background: #F3F4F6;
+            border-radius: 8px;
+            padding: 16px 20px;
+            margin-top: 12px;
+        }
+
+        .contact-card p {
+            margin: 4px 0;
+            font-size: 0.93rem;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* ── Footer ─────────────────────────────────────── */
+        footer {
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 0.82rem;
+            color: var(--text-light);
+            border-top: 1px solid var(--border);
+        }
+
+        /* ── Responsive ─────────────────────────────────── */
+        @media (max-width: 600px) {
+            section {
+                padding: 24px 18px;
+            }
+
+            header h1 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ── Header ──────────────────────────────────────── -->
+    <header>
+        <div class="logo">💜</div>
+        <h1>101 Hábitos</h1>
+        <p>Política de Privacidad &amp; Términos y Condiciones</p>
+    </header>
+
+    <!-- ── Navegación rápida ────────────────────────────── -->
+    <nav class="toc">
+        <a href="#privacidad">Política de Privacidad</a>
+        <a href="#terminos">Términos y Condiciones</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <main>
+
+        <!-- ══════════════════════════════════════════════════
+       SECCIÓN 1 — POLÍTICA DE PRIVACIDAD
+  ═══════════════════════════════════════════════════ -->
+        <section id="privacidad">
+            <h2>Política de Privacidad</h2>
+            <p class="section-date">Última actualización: 13 de marzo de 2026</p>
+
+            <div class="notice">
+                <strong>Resumen rápido:</strong> 101 Hábitos no requiere registro ni cuenta. Tus hábitos y progreso se
+                guardan <strong>únicamente en tu dispositivo</strong>. Sólo los servicios de publicidad y suscripciones
+                de terceros (Google AdMob y RevenueCat) pueden recopilar datos de uso anónimos según sus propias
+                políticas.
+            </div>
+
+            <h3>1. Responsable del tratamiento</h3>
+            <p>La aplicación <strong>101 Hábitos</strong> (identificador de paquete:
+                <code>com.johandres.habitos101</code>) es desarrollada y mantenida por <strong>Johan Andrés</strong>. Si
+                tienes preguntas sobre esta política, puedes contactarnos en la dirección indicada al final de este
+                documento.</p>
+
+            <h3>2. Datos que recopilamos</h3>
+            <p>La aplicación <strong>no recopila ni transmite datos personales propios</strong>. Toda la información que
+                introduces en la app (nombres de hábitos, fechas de progreso, preferencias de notificación) se almacena
+                exclusivamente en el <strong>almacenamiento local del dispositivo</strong> mediante
+                <em>AsyncStorage</em> y nunca abandona tu teléfono a través de nuestros servidores.</p>
+
+            <p>Los únicos datos que pueden ser recopilados son los tratados por los siguientes <strong>servicios de
+                    terceros</strong> integrados en la aplicación:</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Servicio</th>
+                            <th>Finalidad</th>
+                            <th>Datos que puede tratar</th>
+                            <th>Política oficial</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Google AdMob</strong></td>
+                            <td>Mostrar anuncios a usuarios gratuitos</td>
+                            <td>ID de publicidad del dispositivo, datos de interacción con anuncios, dirección IP
+                                aproximada</td>
+                            <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google
+                                    Privacy Policy</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>RevenueCat</strong></td>
+                            <td>Gestionar suscripciones premium</td>
+                            <td>ID de dispositivo anónimo, historial de compras/suscripciones (sin datos de tarjeta)
+                            </td>
+                            <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat
+                                    Privacy Policy</a></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google Play / App Store</strong></td>
+                            <td>Distribución y procesamiento de pagos</td>
+                            <td>Gestionados directamente por Google o Apple en el proceso de compra</td>
+                            <td><a href="https://play.google.com/about/play-terms/" target="_blank"
+                                    rel="noopener">Google Play Terms</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>3. Notificaciones locales</h3>
+            <p>Si activas los recordatorios diarios, la aplicación programa notificaciones locales a través de la
+                librería <strong>Notifee</strong>. Estas notificaciones se procesan <strong>íntegramente en tu
+                    dispositivo</strong> sin enviar datos a ningún servidor externo. Puedes desactivarlas en cualquier
+                momento desde la pantalla de Configuración de la app o desde los ajustes de tu dispositivo.</p>
+
+            <h3>4. Permisos solicitados</h3>
+            <ul>
+                <li><strong>POST_NOTIFICATIONS</strong> — Para enviar recordatorios diarios de hábitos (Android 13+).
+                    Opcional.</li>
+                <li><strong>INTERNET</strong> — Requerido por Google AdMob y RevenueCat para mostrar anuncios y validar
+                    suscripciones.</li>
+                <li><strong>VIBRATE</strong> — Para vibración en notificaciones locales. Opcional.</li>
+                <li><strong>RECEIVE_BOOT_COMPLETED</strong> — Para reprogramar recordatorios tras reiniciar el
+                    dispositivo. Opcional.</li>
+            </ul>
+
+            <h3>5. Menores de edad</h3>
+            <p>La aplicación no está dirigida a menores de 13 años. No recopilamos intencionalmente información de
+                menores. Si eres padre o tutor y crees que tu hijo ha proporcionado información, contáctanos para
+                eliminarla.</p>
+
+            <h3>6. Transferencias internacionales de datos</h3>
+            <p>Los datos tratados por Google AdMob y RevenueCat pueden ser transferidos y procesados en servidores
+                ubicados en Estados Unidos u otras jurisdicciones. Ambos servicios están sujetos al <em>EU-US Data
+                    Privacy Framework</em> y a las salvaguardas contractuales aplicables.</p>
+
+            <h3>7. Retención y eliminación de datos</h3>
+            <p>Todos los datos almacenados localmente (hábitos, progreso, preferencias) pueden eliminarse en cualquier
+                momento desde <strong>Configuración → Limpiar todos los datos</strong> dentro de la app, o desinstalando
+                la aplicación. Los datos tratados por terceros se rigen por las políticas de retención de cada servicio.
+            </p>
+
+            <h3>8. Tus derechos</h3>
+            <p>De acuerdo con la normativa aplicable (GDPR / LGPD según tu región), tienes derecho a:</p>
+            <ul>
+                <li>Acceder a los datos que tenemos sobre ti.</li>
+                <li>Solicitar la rectificación o eliminación de tus datos.</li>
+                <li>Oponerte al tratamiento con fines de marketing.</li>
+                <li>Presentar una reclamación ante la autoridad de protección de datos de tu país.</li>
+            </ul>
+            <p>Dado que no manejamos servidores propios con datos personales, la mayoría de estos derechos se ejercen
+                directamente en tu dispositivo o a través de los servicios de terceros.</p>
+
+            <h3>9. Cambios en esta política</h3>
+            <p>Podemos actualizar esta política cuando sea necesario. La fecha de "última actualización" al inicio del
+                documento refleja la versión vigente. Te notificaremos cambios significativos en la descripción de la
+                app en las tiendas o mediante una actualización de la app.</p>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════
+       SECCIÓN 2 — TÉRMINOS Y CONDICIONES
+  ═══════════════════════════════════════════════════ -->
+        <section id="terminos">
+            <h2>Términos y Condiciones</h2>
+            <p class="section-date">Última actualización: 13 de marzo de 2026</p>
+
+            <div class="notice">
+                Al descargar o usar <strong>101 Hábitos</strong>, aceptas estos términos. Si no los aceptas, no uses la
+                aplicación.
+            </div>
+
+            <h3>1. Licencia de uso</h3>
+            <p>Te otorgamos una licencia personal, no exclusiva, intransferible y revocable para usar la aplicación
+                <strong>101 Hábitos</strong> en dispositivos que te pertenezcan o estén bajo tu control, exclusivamente
+                para uso personal y no comercial.</p>
+
+            <h3>2. Cuenta y acceso</h3>
+            <p>La aplicación no requiere creación de cuenta ni registro. No necesitas proporcionar datos personales para
+                usar las funciones básicas. Para la suscripción Premium, el proceso de pago se gestiona íntegramente a
+                través de Google Play o App Store con tu cuenta de Google/Apple.</p>
+
+            <h3>3. Versión gratuita y limitaciones</h3>
+            <ul>
+                <li>Los usuarios gratuitos pueden crear hasta <strong>3 hábitos</strong>.</li>
+                <li>La versión gratuita muestra anuncios publicitarios de Google AdMob.</li>
+                <li>Las funciones avanzadas (estadísticas ampliadas, backup en la nube) están reservadas para usuarios
+                    Premium.</li>
+            </ul>
+
+            <h3>4. Suscripción Premium</h3>
+            <ul>
+                <li>La suscripción Premium se ofrece con modalidad <strong>mensual</strong> con un período de prueba
+                    gratuita de 7 días.</li>
+                <li>El precio exacto se muestra en la pantalla de compra dentro de la app, en la moneda de tu país.</li>
+                <li>La suscripción <strong>se renueva automáticamente</strong> al final de cada período salvo que la
+                    canceles al menos 24 horas antes de la fecha de renovación.</li>
+                <li>Puedes cancelar la suscripción en cualquier momento desde la configuración de tu cuenta en Google
+                    Play o App Store. La cancelación tiene efecto al final del período de facturación actual.</li>
+                <li>Si utilizas el período de prueba gratuita, la suscripción se activará automáticamente al finalizar
+                    la prueba. Cancela antes si no deseas ser cobrado.</li>
+                <li>No ofrecemos reembolsos por períodos ya facturados, excepto cuando lo exija la ley o la política de
+                    la tienda de aplicaciones correspondiente.</li>
+            </ul>
+
+            <h3>5. Conducta del usuario</h3>
+            <p>Al usar la aplicación te comprometes a:</p>
+            <ul>
+                <li>No intentar descompilar, invertir ingeniería, modificar ni distribuir la aplicación o su código
+                    fuente.</li>
+                <li>No usar la aplicación con fines ilegales o contrarios a estos términos.</li>
+                <li>No intentar eludir las restricciones de la versión gratuita mediante medios técnicos.</li>
+            </ul>
+
+            <h3>6. Propiedad intelectual</h3>
+            <p>Todos los derechos sobre la aplicación, incluyendo el código, diseño, gráficos, nombre y logotipo de
+                <strong>101 Hábitos</strong>, son propiedad de Johan Andrés. Estos términos no te transfieren ningún
+                derecho de propiedad intelectual.</p>
+
+            <h3>7. Disponibilidad del servicio</h3>
+            <p>Nos esforzamos por mantener la aplicación disponible y funcional, pero no garantizamos un funcionamiento
+                ininterrumpido. Podemos actualizar, modificar o discontinuar la aplicación o cualquiera de sus funciones
+                sin previo aviso.</p>
+
+            <h3>8. Limitación de responsabilidad</h3>
+            <p>La aplicación se ofrece <strong>"tal cual"</strong> y <strong>"según disponibilidad"</strong>, sin
+                garantías expresas ni implícitas. En la máxima medida permitida por la ley:</p>
+            <ul>
+                <li>No somos responsables de la pérdida de datos de hábitos o progreso por fallo del dispositivo,
+                    desinstalación o error del sistema.</li>
+                <li>No garantizamos que la aplicación cumpla tus expectativas de resultados de salud, productividad o
+                    bienestar.</li>
+                <li>Nuestra responsabilidad total ante ti no superará el importe que hayas pagado por la suscripción
+                    Premium en los últimos 3 meses.</li>
+            </ul>
+
+            <h3>9. Servicios de terceros</h3>
+            <p>La aplicación integra servicios de terceros (Google AdMob, RevenueCat) sujetos a sus propios términos de
+                uso. No somos responsables del comportamiento ni de las políticas de estos servicios. Al usar la app,
+                reconoces que estás sujeto también a sus términos.</p>
+
+            <h3>10. Modificaciones de los términos</h3>
+            <p>Podemos actualizar estos términos en cualquier momento. La versión actualizada estará disponible en esta
+                misma URL. El uso continuado de la aplicación tras la publicación de cambios implica la aceptación de
+                los nuevos términos.</p>
+
+            <h3>11. Ley aplicable</h3>
+            <p>Estos términos se rigen por la legislación de la República de Colombia. Cualquier disputa que no pueda
+                resolverse amigablemente se someterá a los tribunales competentes de dicho país.</p>
+
+            <h3>12. Divisibilidad</h3>
+            <p>Si alguna disposición de estos términos se considera inválida o inaplicable, las demás disposiciones
+                seguirán en plena vigencia.</p>
+        </section>
+
+        <!-- ══════════════════════════════════════════════════
+       SECCIÓN 3 — CONTACTO
+  ═══════════════════════════════════════════════════ -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p class="section-date">¿Preguntas sobre privacidad, suscripciones o soporte?</p>
+
+            <p>Si tienes dudas sobre esta Política de Privacidad, los Términos de Uso, o necesitas soporte técnico,
+                puedes contactarnos a través de:</p>
+
+            <div class="contact-card">
+                <p><strong>Aplicación:</strong> 101 Hábitos</p>
+                <p><strong>Desarrollador:</strong> Johan Andrés</p>
+                <p><strong>Correo electrónico:</strong> <a
+                        href="mailto:soporte@101habitos.app">soporte@101habitos.app</a></p>
+                <p><strong>Fecha de vigencia:</strong> 13 de marzo de 2026</p>
+            </div>
+
+            <p style="margin-top:20px; font-size:0.9rem; color:#6B7280;">
+                Intentaremos responder todas las consultas en un plazo máximo de 5 días hábiles.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2026 101 Hábitos — Johan Andrés. Todos los derechos reservados.</p>
+        <p style="margin-top:6px;">
+            <a href="#privacidad" style="color:#6366F1; text-decoration:none; margin:0 8px;">Política de Privacidad</a>
+            <a href="#terminos" style="color:#6366F1; text-decoration:none; margin:0 8px;">Términos y Condiciones</a>
+            <a href="#contacto" style="color:#6366F1; text-decoration:none; margin:0 8px;">Contacto</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
