@@ -5,517 +5,1145 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hábitos — Política de Privacidad y Términos de Uso</title>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
     <style>
         :root {
-            --primary: #6366F1;
-            --primary-dark: #4F46E5;
-            --text: #1F2937;
-            --text-light: #6B7280;
-            --bg: #F9FAFB;
+            --primary: #4F46E5;
+            --primary-dark: #3730A3;
+            --accent: #06B6D4;
+            --navy: #0F172A;
+            --text: #1E293B;
+            --text-muted: #64748B;
+            --bg: #F1F5F9;
             --card: #FFFFFF;
-            --border: #E5E7EB;
-            --radius: 12px;
+            --border: #E2E8F0;
+            --radius: 16px;
+            --shadow: 0 4px 24px rgba(15, 23, 42, .07);
+            --shadow-lg: 0 12px 48px rgba(15, 23, 42, .13);
         }
 
-        *,
-        *::before,
-        *::after {
+        * {
             box-sizing: border-box;
-            margin: 0;
-            padding: 0;
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.7;
-            font-size: 16px;
+            line-height: 1.75;
         }
 
-        /* ── Header ─────────────────────────────────────── */
-        header {
-            background: var(--primary);
+        /* ── Hero Header ─────────────────────────────── */
+        .site-hero {
+            background: linear-gradient(135deg, #14355694 0%, #272754 50%, #312E81 100%);
+            position: relative;
+            overflow: hidden;
+            padding: 28px 0 22px;
+        }
+
+        .site-hero::before {
+            content: '';
+            position: absolute;
+            top: -80px;
+            right: -80px;
+            width: 420px;
+            height: 420px;
+            background: radial-gradient(circle, rgba(99, 102, 241, .28) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .site-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -60px;
+            left: -40px;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(6, 182, 212, .22) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-logo-img {
+            width: 34%;
+            max-width: 200px;
+        }
+
+        .hero-divider {
+            width: 1px;
+            height: 36px;
+            background: rgba(255, 255, 255, .22);
+            margin: 0 16px;
+            flex-shrink: 0;
+        }
+
+        .hero-app-name {
+            font-size: 1.55rem;
+            font-weight: 800;
             color: #fff;
-            padding: 48px 24px 40px;
-            text-align: center;
+            letter-spacing: -.5px;
+            line-height: 1.1;
         }
 
-        header .logo {
+        .hero-subtitle {
+            font-size: .9rem;
+            color: rgba(255, 255, 255, .6);
+            font-weight: 400;
+            margin-top: 3px;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 6px;
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, .1);
+            border: 1px solid rgba(255, 255, 255, .18);
+            color: rgba(255, 255, 255, .85);
+            font-size: .76rem;
+            font-weight: 500;
+            padding: 5px 14px;
+            border-radius: 100px;
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            width: 72px;
-            height: 72px;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.18);
-            border: 2px solid rgba(255, 255, 255, 0.35);
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            color: #fff;
-            margin-bottom: 16px;
+            gap: 6px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
-        header h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        header p {
-            font-size: 0.95rem;
-            opacity: 0.85;
-        }
-
-        /* ── Nav de secciones ───────────────────────────── */
-        nav.toc {
-            background: var(--card);
+        /* ── Sticky Nav ──────────────────────────────── */
+        .site-nav {
+            background: rgba(255, 255, 255, .97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
-            padding: 16px 24px;
-            display: flex;
-            gap: 24px;
-            justify-content: center;
-            flex-wrap: wrap;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            z-index: 300;
+            box-shadow: 0 2px 12px rgba(15, 23, 42, .06);
         }
 
-        nav.toc a {
-            color: var(--primary);
+        .site-nav .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            padding: 10px 24px;
+            flex-wrap: wrap;
+        }
+
+        .site-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            color: var(--text-muted);
             text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            padding: 4px 0;
-            border-bottom: 2px solid transparent;
-            transition: border-color 0.2s;
+            font-weight: 500;
+            font-size: .875rem;
+            padding: 7px 16px;
+            border-radius: 8px;
+            transition: all .2s;
         }
 
-        nav.toc a:hover {
-            border-color: var(--primary);
+        .site-nav a:hover {
+            background: #EEF2FF;
+            color: var(--primary);
         }
 
-        /* ── Contenido principal ────────────────────────── */
-        main {
-            max-width: 860px;
+        /* ── Content wrapper ─────────────────────────── */
+        .content-wrap {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 40px 24px 80px;
+            padding: 48px 20px 80px;
         }
 
-        /* ── Sección ────────────────────────────────────── */
-        section {
+        /* ── Policy section cards ────────────────────── */
+        .policy-section {
             background: var(--card);
             border-radius: var(--radius);
             border: 1px solid var(--border);
-            padding: 40px;
-            margin-bottom: 32px;
+            padding: 44px 48px;
+            margin-bottom: 28px;
+            box-shadow: var(--shadow);
+            transition: box-shadow .3s;
         }
 
-        section h2 {
-            font-size: 1.5rem;
+        .policy-section:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-bottom: 20px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .section-icon.privacy {
+            background: #EEF2FF;
+            color: var(--primary);
+        }
+
+        .section-icon.terms {
+            background: #F0FDF4;
+            color: #16A34A;
+        }
+
+        .section-icon.contact {
+            background: #FFF7ED;
+            color: #EA580C;
+        }
+
+        .section-header h2 {
+            font-size: 1.4rem;
             font-weight: 700;
-            color: var(--primary-dark);
-            margin-bottom: 8px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid var(--border);
+            color: var(--navy);
+            margin: 0 0 2px;
         }
 
         .section-date {
-            font-size: 0.82rem;
-            color: var(--text-light);
-            margin-bottom: 28px;
+            font-size: .77rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            margin: 0;
         }
 
         h3 {
-            font-size: 1.05rem;
+            font-size: .96rem;
             font-weight: 700;
             color: var(--text);
             margin: 28px 0 8px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
         }
 
-        h3:first-of-type {
-            margin-top: 20px;
+        h3::before {
+            content: '';
+            display: inline-block;
+            width: 3px;
+            height: 15px;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: 2px;
+            flex-shrink: 0;
         }
 
         p {
             margin-bottom: 12px;
-            color: #374151;
+            color: #475569;
         }
 
         ul,
         ol {
-            padding-left: 20px;
+            padding-left: 22px;
             margin-bottom: 12px;
         }
 
         li {
             margin-bottom: 6px;
-            color: #374151;
+            color: #475569;
         }
 
-        /* ── Tabla de terceros ──────────────────────────── */
+        code {
+            background: #F1F5F9;
+            color: var(--primary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: .85em;
+        }
+
+        /* ── Notice box ──────────────────────────────── */
+        .notice {
+            background: linear-gradient(135deg, #EEF2FF, #F0F9FF);
+            border: 1px solid #C7D2FE;
+            border-left: 4px solid var(--primary);
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin: 4px 0 20px;
+            font-size: .9rem;
+            color: #3730A3;
+        }
+
+        .notice strong {
+            color: #312E81;
+        }
+
+        /* ── Third-party table ───────────────────────── */
         .table-wrap {
             overflow-x: auto;
             margin: 16px 0;
+            border-radius: 10px;
+            border: 1px solid var(--border);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 0.9rem;
+            font-size: .875rem;
         }
 
         thead th {
-            background: #F3F4F6;
-            color: var(--text);
+            background: #F8FAFC;
+            color: var(--navy);
             font-weight: 700;
-            padding: 10px 14px;
+            padding: 12px 16px;
             text-align: left;
-            border: 1px solid var(--border);
+            border-bottom: 2px solid var(--border);
+            font-size: .78rem;
+            text-transform: uppercase;
+            letter-spacing: .05em;
         }
 
         tbody td {
-            padding: 9px 14px;
-            border: 1px solid var(--border);
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
             vertical-align: top;
+            color: #475569;
         }
 
-        tbody tr:nth-child(even) td {
-            background: #F9FAFB;
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        tbody tr:hover td {
+            background: #F8FAFC;
         }
 
         tbody td a {
             color: var(--primary);
             text-decoration: none;
+            font-weight: 500;
         }
 
         tbody td a:hover {
             text-decoration: underline;
         }
 
-        /* ── Caja de aviso ──────────────────────────────── */
-        .notice {
-            background: #EEF2FF;
-            border-left: 4px solid var(--primary);
-            border-radius: 6px;
-            padding: 14px 18px;
-            margin: 20px 0;
-            font-size: 0.92rem;
-            color: #3730A3;
+        /* ── Contact grid ────────────────────────────── */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 20px;
         }
 
-        /* ── Contacto ───────────────────────────────────── */
-        .contact-card {
-            background: #F3F4F6;
-            border-radius: 8px;
-            padding: 16px 20px;
-            margin-top: 12px;
+        .contact-item {
+            background: #F8FAFC;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 16px 18px;
         }
 
-        .contact-card p {
-            margin: 4px 0;
-            font-size: 0.93rem;
+        .contact-item .label {
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--text-muted);
+            font-weight: 600;
+            margin-bottom: 4px;
         }
 
-        .contact-card a {
+        .contact-item .value {
+            font-weight: 600;
+            color: var(--text);
+            font-size: .92rem;
+        }
+
+        .contact-item .value a {
             color: var(--primary);
             text-decoration: none;
         }
 
-        /* ── Footer ─────────────────────────────────────── */
-        footer {
-            text-align: center;
-            padding: 32px 24px;
-            font-size: 0.82rem;
-            color: var(--text-light);
-            border-top: 1px solid var(--border);
+        .contact-item.full {
+            grid-column: 1 / -1;
         }
 
-        /* ── Responsive ─────────────────────────────────── */
-        @media (max-width: 600px) {
-            section {
-                padding: 24px 18px;
+        /* ── Footer ──────────────────────────────────── */
+        footer {
+            background: var(--navy);
+            color: rgba(255, 255, 255, .55);
+            padding: 40px 24px 32px;
+            text-align: center;
+            font-size: .82rem;
+        }
+
+        footer .footer-logo {
+            height: 34px;
+            filter: brightness(0) invert(1);
+            opacity: .55;
+            margin-bottom: 14px;
+        }
+
+        footer strong {
+            color: rgba(255, 255, 255, .82);
+        }
+
+        .footer-links {
+            margin-top: 16px;
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, .45);
+            text-decoration: none;
+            padding: 4px 12px;
+            border-radius: 6px;
+            transition: all .2s;
+            font-size: .8rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .footer-links a:hover {
+            background: rgba(255, 255, 255, .08);
+            color: rgba(255, 255, 255, .85);
+        }
+
+        /* ── Responsive ──────────────────────────────── */
+        @media (max-width: 768px) {
+            .policy-section {
+                padding: 28px 22px;
             }
 
-            header h1 {
-                font-size: 1.4rem;
+            .contact-grid {
+                grid-template-columns: 1fr;
             }
+
+            .hero-app-name {
+                font-size: 1.5rem;
+            }
+
+            .hero-divider {
+                height: 36px;
+                margin: 0 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-logo-img {
+                height: 40px;
+            }
+
+            .site-hero {
+                padding: 36px 16px 30px;
+            }
+
+            .hero-app-name {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* ── Language toggle ─────────────────────────── */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .lang-toggle {
+            display: flex;
+            gap: 4px;
+            flex-shrink: 0;
+        }
+
+        .lang-btn {
+            padding: 5px 14px;
+            border-radius: 7px;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            color: var(--text-muted);
+            font-size: .78rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all .2s;
+            font-family: inherit;
+            letter-spacing: .06em;
+            line-height: 1;
+        }
+
+        .lang-btn.active,
+        .lang-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #fff;
+        }
+
+        /* ── Language sections ───────────────────────── */
+        .lang-section {
+            display: none;
+        }
+
+        .lang-section.visible {
+            display: block;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- ── Header ──────────────────────────────────────── -->
-    <header>
-        <div class="logo">BPL</div>
-        <h1>Hábitos</h1>
-        <p>Política de Privacidad &amp; Términos y Condiciones</p>
+    <!-- ── Hero Header ──────────────────────────────────── -->
+    <header class="site-hero">
+        <div class="container">
+            <div class="d-flex align-items-center">
+                <img src="LogoEmpresa.png" alt="Business Productivity Labs" class="hero-logo-img">
+                <div class="hero-divider"></div>
+                <div>
+                    <div class="hero-app-name">Hábitos</div>
+                    <div class="hero-subtitle">Política de Privacidad &amp; Términos y Condiciones</div>
+                </div>
+            </div>
+            <div class="hero-badges">
+                <span class="hero-badge"><i class="bi bi-shield-lock-fill"></i> Privacidad</span>
+                <span class="hero-badge"><i class="bi bi-file-earmark-text-fill"></i> Términos</span>
+                <span class="hero-badge"><i class="bi bi-phone-fill"></i> Android &amp; iOS</span>
+                <span class="hero-badge"><i class="bi bi-calendar3"></i> Vigente desde 13 mar 2026</span>
+            </div>
+        </div>
     </header>
 
-    <!-- ── Navegación rápida ────────────────────────────── -->
-    <nav class="toc">
-        <a href="#privacidad">Política de Privacidad</a>
-        <a href="#terminos">Términos y Condiciones</a>
-        <a href="#contacto">Contacto</a>
+    <!-- ── Sticky Nav ───────────────────────────────────── -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <div class="nav-links" id="nav-links">
+                <a href="#privacidad"><i class="bi bi-shield-lock"></i> <span>Política de Privacidad</span></a>
+                <a href="#terminos"><i class="bi bi-file-earmark-text"></i> <span>Términos y Condiciones</span></a>
+                <a href="#contacto"><i class="bi bi-envelope"></i> <span>Contacto</span></a>
+            </div>
+            <div class="lang-toggle">
+                <button class="lang-btn active" onclick="setLang('es', this)">ES</button>
+                <button class="lang-btn" onclick="setLang('en', this)">EN</button>
+            </div>
+        </div>
     </nav>
 
-    <main>
+    <div class="content-wrap">
 
-        <!-- ══════════════════════════════════════════════════
-       SECCIÓN 1 — POLÍTICA DE PRIVACIDAD
-  ═══════════════════════════════════════════════════ -->
-        <section id="privacidad">
-            <h2>Política de Privacidad</h2>
-            <p class="section-date">Última actualización: 13 de marzo de 2026</p>
+        <!-- ── Español ──────────────────────────────────── -->
+        <div id="lang-es" class="lang-section visible">
 
-            <div class="notice">
-                <strong>Resumen rápido:</strong> Hábitos no requiere registro ni cuenta. Tus hábitos y progreso se
-                guardan <strong>únicamente en tu dispositivo</strong>. Sólo los servicios de publicidad y suscripciones
-                de terceros (Google AdMob y RevenueCat) pueden recopilar datos de uso anónimos según sus propias
-                políticas.
-            </div>
+            <!-- ══════════════════════════════════════════════════
+             SECCIÓN 1 — POLÍTICA DE PRIVACIDAD
+        ═══════════════════════════════════════════════════ -->
+            <section class="policy-section" id="privacidad">
+                <div class="section-header">
+                    <div class="section-icon privacy"><i class="bi bi-shield-lock-fill"></i></div>
+                    <div>
+                        <h2>Política de Privacidad</h2>
+                        <p class="section-date">Última actualización: 13 de marzo de 2026</p>
+                    </div>
+                </div>
 
-            <h3>1. Responsable del tratamiento</h3>
-            <p>La aplicación <strong>Hábitos</strong> (identificador de paquete:
-                <code>com.johandres.habitos101</code>) es desarrollada y mantenida por <strong>Business Productivity
-                    Labs</strong>. Si
-                tienes preguntas sobre esta política, puedes contactarnos en la dirección indicada al final de este
-                documento.
-            </p>
+                <div class="notice">
+                    <strong><i class="bi bi-info-circle-fill me-1"></i>Resumen rápido:</strong> Hábitos no requiere
+                    registro ni cuenta. Tus hábitos y progreso se guardan <strong>únicamente en tu dispositivo</strong>.
+                    Sólo los servicios de publicidad y suscripciones de terceros (Google AdMob y RevenueCat) pueden
+                    recopilar datos de uso anónimos según sus propias políticas.
+                </div>
 
-            <h3>2. Datos que recopilamos</h3>
-            <p>La aplicación <strong>no recopila ni transmite datos personales propios</strong>. Toda la información que
-                introduces en la app (nombres de hábitos, fechas de progreso, preferencias de notificación) se almacena
-                exclusivamente en el <strong>almacenamiento local del dispositivo</strong> mediante
-                <em>AsyncStorage</em> y nunca abandona tu teléfono a través de nuestros servidores.
-            </p>
+                <h3>1. Responsable del tratamiento</h3>
+                <p>La aplicación <strong>Hábitos</strong> (identificador de paquete:
+                    <code>com.johandres.habitos101</code>) es desarrollada y mantenida por <strong>Business Productivity
+                        Labs</strong>. Si tienes preguntas sobre esta política, puedes contactarnos en la dirección
+                    indicada al final de este documento.
+                </p>
 
-            <p>Los únicos datos que pueden ser recopilados son los tratados por los siguientes <strong>servicios de
-                    terceros</strong> integrados en la aplicación:</p>
+                <h3>2. Datos que recopilamos</h3>
+                <p>La aplicación <strong>no recopila ni transmite datos personales propios</strong>. Toda la información
+                    que introduces en la app (nombres de hábitos, fechas de progreso, preferencias de notificación) se
+                    almacena exclusivamente en el <strong>almacenamiento local del dispositivo</strong> mediante
+                    <em>AsyncStorage</em> y nunca abandona tu teléfono a través de nuestros servidores.
+                </p>
+                <p>Los únicos datos que pueden ser recopilados son los tratados por los siguientes <strong>servicios de
+                        terceros</strong> integrados en la aplicación:</p>
 
-            <div class="table-wrap">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Servicio</th>
-                            <th>Finalidad</th>
-                            <th>Datos que puede tratar</th>
-                            <th>Política oficial</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Google AdMob</strong></td>
-                            <td>Mostrar anuncios a usuarios gratuitos</td>
-                            <td>ID de publicidad del dispositivo, datos de interacción con anuncios, dirección IP
-                                aproximada</td>
-                            <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google
-                                    Privacy Policy</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>RevenueCat</strong></td>
-                            <td>Gestionar suscripciones premium</td>
-                            <td>ID de dispositivo anónimo, historial de compras/suscripciones (sin datos de tarjeta)
-                            </td>
-                            <td><a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat
-                                    Privacy Policy</a></td>
-                        </tr>
-                        <tr>
-                            <td><strong>Google Play / App Store</strong></td>
-                            <td>Distribución y procesamiento de pagos</td>
-                            <td>Gestionados directamente por Google o Apple en el proceso de compra</td>
-                            <td><a href="https://play.google.com/about/play-terms/" target="_blank"
-                                    rel="noopener">Google Play Terms</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Servicio</th>
+                                <th>Finalidad</th>
+                                <th>Datos que puede tratar</th>
+                                <th>Política oficial</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Google AdMob</strong></td>
+                                <td>Mostrar anuncios a usuarios gratuitos</td>
+                                <td>ID de publicidad del dispositivo, datos de interacción con anuncios, dirección IP
+                                    aproximada</td>
+                                <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google
+                                        Privacy Policy <i class="bi bi-box-arrow-up-right"
+                                            style="font-size:.7em"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>RevenueCat</strong></td>
+                                <td>Gestionar suscripciones premium</td>
+                                <td>ID de dispositivo anónimo, historial de compras/suscripciones (sin datos de tarjeta)
+                                </td>
+                                <td><a href="https://www.revenuecat.com/privacy" target="_blank"
+                                        rel="noopener">RevenueCat Privacy Policy <i class="bi bi-box-arrow-up-right"
+                                            style="font-size:.7em"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Google Play / App Store</strong></td>
+                                <td>Distribución y procesamiento de pagos</td>
+                                <td>Gestionados directamente por Google o Apple en el proceso de compra</td>
+                                <td><a href="https://play.google.com/about/play-terms/" target="_blank"
+                                        rel="noopener">Google Play Terms <i class="bi bi-box-arrow-up-right"
+                                            style="font-size:.7em"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <h3>3. Notificaciones locales</h3>
-            <p>Si activas los recordatorios diarios, la aplicación programa notificaciones locales a través de la
-                librería <strong>Notifee</strong>. Estas notificaciones se procesan <strong>íntegramente en tu
-                    dispositivo</strong> sin enviar datos a ningún servidor externo. Puedes desactivarlas en cualquier
-                momento desde la pantalla de Configuración de la app o desde los ajustes de tu dispositivo.</p>
+                <h3>3. Notificaciones locales</h3>
+                <p>Si activas los recordatorios diarios, la aplicación programa notificaciones locales a través de la
+                    librería <strong>Notifee</strong>. Estas notificaciones se procesan <strong>íntegramente en tu
+                        dispositivo</strong> sin enviar datos a ningún servidor externo. Puedes desactivarlas en
+                    cualquier momento desde la pantalla de Configuración de la app o desde los ajustes de tu
+                    dispositivo.</p>
 
-            <h3>4. Permisos solicitados</h3>
-            <ul>
-                <li><strong>POST_NOTIFICATIONS</strong> — Para enviar recordatorios diarios de hábitos (Android 13+).
-                    Opcional.</li>
-                <li><strong>INTERNET</strong> — Requerido por Google AdMob y RevenueCat para mostrar anuncios y validar
-                    suscripciones.</li>
-                <li><strong>VIBRATE</strong> — Para vibración en notificaciones locales. Opcional.</li>
-                <li><strong>RECEIVE_BOOT_COMPLETED</strong> — Para reprogramar recordatorios tras reiniciar el
-                    dispositivo. Opcional.</li>
-            </ul>
+                <h3>4. Permisos solicitados</h3>
+                <ul>
+                    <li><strong>POST_NOTIFICATIONS</strong> — Para enviar recordatorios diarios de hábitos (Android
+                        13+). Opcional.</li>
+                    <li><strong>INTERNET</strong> — Requerido por Google AdMob y RevenueCat para mostrar anuncios y
+                        validar suscripciones.</li>
+                    <li><strong>VIBRATE</strong> — Para vibración en notificaciones locales. Opcional.</li>
+                    <li><strong>RECEIVE_BOOT_COMPLETED</strong> — Para reprogramar recordatorios tras reiniciar el
+                        dispositivo. Opcional.</li>
+                </ul>
 
-            <h3>5. Menores de edad</h3>
-            <p>La aplicación no está dirigida a menores de 13 años. No recopilamos intencionalmente información de
-                menores. Si eres padre o tutor y crees que tu hijo ha proporcionado información, contáctanos para
-                eliminarla.</p>
+                <h3>5. Menores de edad</h3>
+                <p>La aplicación no está dirigida a menores de 13 años. No recopilamos intencionalmente información de
+                    menores. Si eres padre o tutor y crees que tu hijo ha proporcionado información, contáctanos para
+                    eliminarla.</p>
 
-            <h3>6. Transferencias internacionales de datos</h3>
-            <p>Los datos tratados por Google AdMob y RevenueCat pueden ser transferidos y procesados en servidores
-                ubicados en Estados Unidos u otras jurisdicciones. Ambos servicios están sujetos al <em>EU-US Data
-                    Privacy Framework</em> y a las salvaguardas contractuales aplicables.</p>
+                <h3>6. Transferencias internacionales de datos</h3>
+                <p>Los datos tratados por Google AdMob y RevenueCat pueden ser transferidos y procesados en servidores
+                    ubicados en Estados Unidos u otras jurisdicciones. Ambos servicios están sujetos al <em>EU-US Data
+                        Privacy Framework</em> y a las salvaguardas contractuales aplicables.</p>
 
-            <h3>7. Retención y eliminación de datos</h3>
-            <p>Todos los datos almacenados localmente (hábitos, progreso, preferencias) pueden eliminarse en cualquier
-                momento desde <strong>Configuración → Limpiar todos los datos</strong> dentro de la app, o desinstalando
-                la aplicación. Los datos tratados por terceros se rigen por las políticas de retención de cada servicio.
-            </p>
+                <h3>7. Retención y eliminación de datos</h3>
+                <p>Todos los datos almacenados localmente (hábitos, progreso, preferencias) pueden eliminarse en
+                    cualquier momento desde <strong>Configuración → Limpiar todos los datos</strong> dentro de la app, o
+                    desinstalando la aplicación. Los datos tratados por terceros se rigen por las políticas de retención
+                    de cada servicio.</p>
 
-            <h3>8. Tus derechos</h3>
-            <p>De acuerdo con la normativa aplicable (GDPR / LGPD según tu región), tienes derecho a:</p>
-            <ul>
-                <li>Acceder a los datos que tenemos sobre ti.</li>
-                <li>Solicitar la rectificación o eliminación de tus datos.</li>
-                <li>Oponerte al tratamiento con fines de marketing.</li>
-                <li>Presentar una reclamación ante la autoridad de protección de datos de tu país.</li>
-            </ul>
-            <p>Dado que no manejamos servidores propios con datos personales, la mayoría de estos derechos se ejercen
-                directamente en tu dispositivo o a través de los servicios de terceros.</p>
+                <h3>8. Tus derechos</h3>
+                <p>De acuerdo con la normativa aplicable (GDPR / LGPD según tu región), tienes derecho a:</p>
+                <ul>
+                    <li>Acceder a los datos que tenemos sobre ti.</li>
+                    <li>Solicitar la rectificación o eliminación de tus datos.</li>
+                    <li>Oponerte al tratamiento con fines de marketing.</li>
+                    <li>Presentar una reclamación ante la autoridad de protección de datos de tu país.</li>
+                </ul>
+                <p>Dado que no manejamos servidores propios con datos personales, la mayoría de estos derechos se
+                    ejercen directamente en tu dispositivo o a través de los servicios de terceros.</p>
 
-            <h3>9. Cambios en esta política</h3>
-            <p>Podemos actualizar esta política cuando sea necesario. La fecha de "última actualización" al inicio del
-                documento refleja la versión vigente. Te notificaremos cambios significativos en la descripción de la
-                app en las tiendas o mediante una actualización de la app.</p>
-        </section>
+                <h3>9. Cambios en esta política</h3>
+                <p>Podemos actualizar esta política cuando sea necesario. La fecha de "última actualización" al inicio
+                    del documento refleja la versión vigente. Te notificaremos cambios significativos en la descripción
+                    de la app en las tiendas o mediante una actualización de la app.</p>
+            </section>
 
-        <!-- ══════════════════════════════════════════════════
-       SECCIÓN 2 — TÉRMINOS Y CONDICIONES
-  ═══════════════════════════════════════════════════ -->
-        <section id="terminos">
-            <h2>Términos y Condiciones</h2>
-            <p class="section-date">Última actualización: 13 de marzo de 2026</p>
+            <!-- ══════════════════════════════════════════════════
+             SECCIÓN 2 — TÉRMINOS Y CONDICIONES
+        ═══════════════════════════════════════════════════ -->
+            <section class="policy-section" id="terminos">
+                <div class="section-header">
+                    <div class="section-icon terms"><i class="bi bi-file-earmark-text-fill"></i></div>
+                    <div>
+                        <h2>Términos y Condiciones</h2>
+                        <p class="section-date">Última actualización: 13 de marzo de 2026</p>
+                    </div>
+                </div>
 
-            <div class="notice">
-                Al descargar o usar <strong>Hábitos</strong>, aceptas estos términos. Si no los aceptas, no uses la
-                aplicación.
-            </div>
+                <div class="notice">
+                    Al descargar o usar <strong>Hábitos</strong>, aceptas estos términos. Si no los aceptas, no uses la
+                    aplicación.
+                </div>
 
-            <h3>1. Licencia de uso</h3>
-            <p>Te otorgamos una licencia personal, no exclusiva, intransferible y revocable para usar la aplicación
-                <strong>Hábitos</strong> en dispositivos que te pertenezcan o estén bajo tu control, exclusivamente
-                para uso personal y no comercial.
-            </p>
+                <h3>1. Licencia de uso</h3>
+                <p>Te otorgamos una licencia personal, no exclusiva, intransferible y revocable para usar la aplicación
+                    <strong>Hábitos</strong> en dispositivos que te pertenezcan o estén bajo tu control, exclusivamente
+                    para uso personal y no comercial.
+                </p>
 
-            <h3>2. Cuenta y acceso</h3>
-            <p>La aplicación no requiere creación de cuenta ni registro. No necesitas proporcionar datos personales para
-                usar las funciones básicas. Para la suscripción Premium, el proceso de pago se gestiona íntegramente a
-                través de Google Play o App Store con tu cuenta de Google/Apple.</p>
+                <h3>2. Cuenta y acceso</h3>
+                <p>La aplicación no requiere creación de cuenta ni registro. No necesitas proporcionar datos personales
+                    para usar las funciones básicas. Para la suscripción Premium, el proceso de pago se gestiona
+                    íntegramente a través de Google Play o App Store con tu cuenta de Google/Apple.</p>
 
-            <h3>3. Versión gratuita y limitaciones</h3>
-            <ul>
-                <li>Los usuarios gratuitos pueden crear hasta <strong>3 hábitos</strong>.</li>
-                <li>La versión gratuita muestra anuncios publicitarios de Google AdMob.</li>
-                <li>Las funciones avanzadas (estadísticas ampliadas, backup en la nube) están reservadas para usuarios
-                    Premium.</li>
-            </ul>
+                <h3>3. Versión gratuita y limitaciones</h3>
+                <ul>
+                    <li>Los usuarios gratuitos pueden crear hasta <strong>3 hábitos</strong>.</li>
+                    <li>La versión gratuita muestra anuncios publicitarios de Google AdMob.</li>
+                    <li>Las funciones avanzadas (estadísticas ampliadas, backup en la nube) están reservadas para
+                        usuarios Premium.</li>
+                </ul>
 
-            <h3>4. Suscripción Premium</h3>
-            <ul>
-                <li>La suscripción Premium se ofrece con modalidad <strong>mensual</strong> con un período de prueba
-                    gratuita de 7 días.</li>
-                <li>El precio exacto se muestra en la pantalla de compra dentro de la app, en la moneda de tu país.</li>
-                <li>La suscripción <strong>se renueva automáticamente</strong> al final de cada período salvo que la
-                    canceles al menos 24 horas antes de la fecha de renovación.</li>
-                <li>Puedes cancelar la suscripción en cualquier momento desde la configuración de tu cuenta en Google
-                    Play o App Store. La cancelación tiene efecto al final del período de facturación actual.</li>
-                <li>Si utilizas el período de prueba gratuita, la suscripción se activará automáticamente al finalizar
-                    la prueba. Cancela antes si no deseas ser cobrado.</li>
-                <li>No ofrecemos reembolsos por períodos ya facturados, excepto cuando lo exija la ley o la política de
-                    la tienda de aplicaciones correspondiente.</li>
-            </ul>
+                <h3>4. Suscripción Premium</h3>
+                <ul>
+                    <li>La suscripción Premium se ofrece con modalidad <strong>mensual</strong> con un período de prueba
+                        gratuita de 7 días.</li>
+                    <li>El precio exacto se muestra en la pantalla de compra dentro de la app, en la moneda de tu país.
+                    </li>
+                    <li>La suscripción <strong>se renueva automáticamente</strong> al final de cada período salvo que la
+                        canceles al menos 24 horas antes de la fecha de renovación.</li>
+                    <li>Puedes cancelar la suscripción en cualquier momento desde la configuración de tu cuenta en
+                        Google Play o App Store. La cancelación tiene efecto al final del período de facturación actual.
+                    </li>
+                    <li>Si utilizas el período de prueba gratuita, la suscripción se activará automáticamente al
+                        finalizar la prueba. Cancela antes si no deseas ser cobrado.</li>
+                    <li>No ofrecemos reembolsos por períodos ya facturados, excepto cuando lo exija la ley o la política
+                        de la tienda de aplicaciones correspondiente.</li>
+                </ul>
 
-            <h3>5. Conducta del usuario</h3>
-            <p>Al usar la aplicación te comprometes a:</p>
-            <ul>
-                <li>No intentar descompilar, invertir ingeniería, modificar ni distribuir la aplicación o su código
-                    fuente.</li>
-                <li>No usar la aplicación con fines ilegales o contrarios a estos términos.</li>
-                <li>No intentar eludir las restricciones de la versión gratuita mediante medios técnicos.</li>
-            </ul>
+                <h3>5. Conducta del usuario</h3>
+                <p>Al usar la aplicación te comprometes a:</p>
+                <ul>
+                    <li>No intentar descompilar, invertir ingeniería, modificar ni distribuir la aplicación o su código
+                        fuente.</li>
+                    <li>No usar la aplicación con fines ilegales o contrarios a estos términos.</li>
+                    <li>No intentar eludir las restricciones de la versión gratuita mediante medios técnicos.</li>
+                </ul>
 
-            <h3>6. Propiedad intelectual</h3>
-            <p>Todos los derechos sobre la aplicación, incluyendo el código, diseño, gráficos, nombre y logotipo de
-                <strong>Hábitos</strong>, son propiedad de Business Productivity Labs. Estos términos no te transfieren
-                ningún
-                derecho de propiedad intelectual.
-            </p>
+                <h3>6. Propiedad intelectual</h3>
+                <p>Todos los derechos sobre la aplicación, incluyendo el código, diseño, gráficos, nombre y logotipo de
+                    <strong>Hábitos</strong>, son propiedad de Business Productivity Labs. Estos términos no te
+                    transfieren ningún derecho de propiedad intelectual.
+                </p>
 
-            <h3>7. Disponibilidad del servicio</h3>
-            <p>Nos esforzamos por mantener la aplicación disponible y funcional, pero no garantizamos un funcionamiento
-                ininterrumpido. Podemos actualizar, modificar o discontinuar la aplicación o cualquiera de sus funciones
-                sin previo aviso.</p>
+                <h3>7. Disponibilidad del servicio</h3>
+                <p>Nos esforzamos por mantener la aplicación disponible y funcional, pero no garantizamos un
+                    funcionamiento ininterrumpido. Podemos actualizar, modificar o discontinuar la aplicación o
+                    cualquiera de sus funciones sin previo aviso.</p>
 
-            <h3>8. Limitación de responsabilidad</h3>
-            <p>La aplicación se ofrece <strong>"tal cual"</strong> y <strong>"según disponibilidad"</strong>, sin
-                garantías expresas ni implícitas. En la máxima medida permitida por la ley:</p>
-            <ul>
-                <li>No somos responsables de la pérdida de datos de hábitos o progreso por fallo del dispositivo,
-                    desinstalación o error del sistema.</li>
-                <li>No garantizamos que la aplicación cumpla tus expectativas de resultados de salud, productividad o
-                    bienestar.</li>
-                <li>Nuestra responsabilidad total ante ti no superará el importe que hayas pagado por la suscripción
-                    Premium en los últimos 3 meses.</li>
-            </ul>
+                <h3>8. Limitación de responsabilidad</h3>
+                <p>La aplicación se ofrece <strong>"tal cual"</strong> y <strong>"según disponibilidad"</strong>, sin
+                    garantías expresas ni implícitas. En la máxima medida permitida por la ley:</p>
+                <ul>
+                    <li>No somos responsables de la pérdida de datos de hábitos o progreso por fallo del dispositivo,
+                        desinstalación o error del sistema.</li>
+                    <li>No garantizamos que la aplicación cumpla tus expectativas de resultados de salud, productividad
+                        o bienestar.</li>
+                    <li>Nuestra responsabilidad total ante ti no superará el importe que hayas pagado por la suscripción
+                        Premium en los últimos 3 meses.</li>
+                </ul>
 
-            <h3>9. Servicios de terceros</h3>
-            <p>La aplicación integra servicios de terceros (Google AdMob, RevenueCat) sujetos a sus propios términos de
-                uso. No somos responsables del comportamiento ni de las políticas de estos servicios. Al usar la app,
-                reconoces que estás sujeto también a sus términos.</p>
+                <h3>9. Servicios de terceros</h3>
+                <p>La aplicación integra servicios de terceros (Google AdMob, RevenueCat) sujetos a sus propios términos
+                    de uso. No somos responsables del comportamiento ni de las políticas de estos servicios. Al usar la
+                    app, reconoces que estás sujeto también a sus términos.</p>
 
-            <h3>10. Modificaciones de los términos</h3>
-            <p>Podemos actualizar estos términos en cualquier momento. La versión actualizada estará disponible en esta
-                misma URL. El uso continuado de la aplicación tras la publicación de cambios implica la aceptación de
-                los nuevos términos.</p>
+                <h3>10. Modificaciones de los términos</h3>
+                <p>Podemos actualizar estos términos en cualquier momento. La versión actualizada estará disponible en
+                    esta misma URL. El uso continuado de la aplicación tras la publicación de cambios implica la
+                    aceptación de los nuevos términos.</p>
 
-            <h3>11. Ley aplicable</h3>
-            <p>Estos términos se rigen por la legislación de la República de Colombia. Cualquier disputa que no pueda
-                resolverse amigablemente se someterá a los tribunales competentes de dicho país.</p>
+                <h3>11. Ley aplicable</h3>
+                <p>Estos términos se rigen por la legislación de la República de Colombia. Cualquier disputa que no
+                    pueda resolverse amigablemente se someterá a los tribunales competentes de dicho país.</p>
 
-            <h3>12. Divisibilidad</h3>
-            <p>Si alguna disposición de estos términos se considera inválida o inaplicable, las demás disposiciones
-                seguirán en plena vigencia.</p>
-        </section>
+                <h3>12. Divisibilidad</h3>
+                <p>Si alguna disposición de estos términos se considera inválida o inaplicable, las demás disposiciones
+                    seguirán en plena vigencia.</p>
+            </section>
 
-        <!-- ══════════════════════════════════════════════════
-       SECCIÓN 3 — CONTACTO
-  ═══════════════════════════════════════════════════ -->
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p class="section-date">¿Preguntas sobre privacidad, suscripciones o soporte?</p>
+            <!-- ══════════════════════════════════════════════════
+             SECCIÓN 3 — CONTACTO
+        ═══════════════════════════════════════════════════ -->
+            <section class="policy-section" id="contacto">
+                <div class="section-header">
+                    <div class="section-icon contact"><i class="bi bi-envelope-fill"></i></div>
+                    <div>
+                        <h2>Contacto</h2>
+                        <p class="section-date">¿Preguntas sobre privacidad, suscripciones o soporte?</p>
+                    </div>
+                </div>
 
-            <p>Si tienes dudas sobre esta Política de Privacidad, los Términos de Uso, o necesitas soporte técnico,
-                puedes contactarnos a través de:</p>
+                <p>Si tienes dudas sobre esta Política de Privacidad, los Términos de Uso, o necesitas soporte técnico,
+                    puedes contactarnos a través de:</p>
 
-            <div class="contact-card">
-                <p><strong>Aplicación:</strong> Hábitos</p>
-                <p><strong>Desarrollador:</strong> Business Productivity Labs</p>
-                <p><strong>Correo electrónico:</strong> <a
-                        href="mailto:businessproductivitylabs@gmail.com">businessproductivitylabs@gmail.com</a></p>
-                <p><strong>Fecha de vigencia:</strong> 13 de marzo de 2026</p>
-            </div>
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="label">Aplicación</div>
+                        <div class="value">Hábitos</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Desarrollador</div>
+                        <div class="value">Business Productivity Labs</div>
+                    </div>
+                    <div class="contact-item full">
+                        <div class="label">Correo electrónico</div>
+                        <div class="value"><a href="mailto:businessproductivitylabs@gmail.com"><i
+                                    class="bi bi-envelope me-1"></i>businessproductivitylabs@gmail.com</a></div>
+                    </div>
+                    <div class="contact-item full">
+                        <div class="label">Fecha de vigencia</div>
+                        <div class="value">13 de marzo de 2026</div>
+                    </div>
+                </div>
 
-            <p style="margin-top:20px; font-size:0.9rem; color:#6B7280;">
-                Intentaremos responder todas las consultas en un plazo máximo de 5 días hábiles.
-            </p>
-        </section>
+                <p style="margin-top:20px; font-size:.85rem; color:var(--text-muted);">
+                    <i class="bi bi-clock me-1"></i> Intentaremos responder todas las consultas en un plazo máximo de 5
+                    días hábiles.
+                </p>
+            </section>
 
-    </main>
+        </div><!-- /lang-es -->
 
+        <!-- ── English ──────────────────────────────────── -->
+        <div id="lang-en" class="lang-section">
+
+            <!-- ══════════════════════════════════════════════
+                 SECTION 1 — PRIVACY POLICY
+            ═══════════════════════════════════════════════ -->
+            <section class="policy-section" id="privacy">
+                <div class="section-header">
+                    <div class="section-icon privacy"><i class="bi bi-shield-lock-fill"></i></div>
+                    <div>
+                        <h2>Privacy Policy</h2>
+                        <p class="section-date">Last updated: March 13, 2026</p>
+                    </div>
+                </div>
+
+                <div class="notice">
+                    <strong><i class="bi bi-info-circle-fill me-1"></i>Quick summary:</strong> Hábitos does not require
+                    registration or an account. Your habits and progress are saved <strong>exclusively on your
+                        device</strong>. Only third-party advertising and subscription services (Google AdMob and
+                    RevenueCat) may collect anonymous usage data according to their own policies.
+                </div>
+
+                <h3>1. Data controller</h3>
+                <p>The application <strong>Hábitos</strong> (package identifier: <code>com.johandres.habitos101</code>)
+                    is developed and maintained by <strong>Business Productivity Labs</strong>. If you have questions
+                    about this policy, you may contact us at the address indicated at the end of this document.</p>
+
+                <h3>2. Data we collect</h3>
+                <p>The application <strong>does not collect or transmit any personal data of its own</strong>. All
+                    information you enter in the app (habit names, progress dates, notification preferences) is stored
+                    exclusively in the <strong>local storage of your device</strong> via <em>AsyncStorage</em> and never
+                    leaves your phone through our servers.</p>
+                <p>The only data that may be collected is handled by the following <strong>third-party services</strong>
+                    integrated in the application:</p>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Service</th>
+                                <th>Purpose</th>
+                                <th>Data it may process</th>
+                                <th>Official policy</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Google AdMob</strong></td>
+                                <td>Display ads to free-plan users</td>
+                                <td>Device advertising ID, ad interaction data, approximate IP address</td>
+                                <td><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google
+                                        Privacy Policy <i class="bi bi-box-arrow-up-right"
+                                            style="font-size:.7em"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>RevenueCat</strong></td>
+                                <td>Manage premium subscriptions</td>
+                                <td>Anonymous device ID, purchase/subscription history (no card data)</td>
+                                <td><a href="https://www.revenuecat.com/privacy" target="_blank"
+                                        rel="noopener">RevenueCat Privacy Policy <i class="bi bi-box-arrow-up-right"
+                                            style="font-size:.7em"></i></a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Google Play / App Store</strong></td>
+                                <td>Distribution and payment processing</td>
+                                <td>Managed directly by Google or Apple during the purchase process</td>
+                                <td><a href="https://play.google.com/about/play-terms/" target="_blank"
+                                        rel="noopener">Google Play Terms <i class="bi bi-box-arrow-up-right"
+                                            style="font-size:.7em"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3>3. Local notifications</h3>
+                <p>If you enable daily reminders, the app schedules local notifications through the
+                    <strong>Notifee</strong> library. These notifications are processed <strong>entirely on your
+                        device</strong> without sending any data to external servers. You can disable them at any time
+                    from the app's Settings screen or from your device settings.
+                </p>
+
+                <h3>4. Requested permissions</h3>
+                <ul>
+                    <li><strong>POST_NOTIFICATIONS</strong> — To send daily habit reminders (Android 13+). Optional.
+                    </li>
+                    <li><strong>INTERNET</strong> — Required by Google AdMob and RevenueCat to display ads and validate
+                        subscriptions.</li>
+                    <li><strong>VIBRATE</strong> — For vibration in local notifications. Optional.</li>
+                    <li><strong>RECEIVE_BOOT_COMPLETED</strong> — To reschedule reminders after device restart.
+                        Optional.</li>
+                </ul>
+
+                <h3>5. Minors</h3>
+                <p>The application is not intended for children under 13. We do not intentionally collect information
+                    from minors. If you are a parent or guardian and believe your child has provided information, please
+                    contact us to have it removed.</p>
+
+                <h3>6. International data transfers</h3>
+                <p>Data processed by Google AdMob and RevenueCat may be transferred to and processed on servers located
+                    in the United States or other jurisdictions. Both services are subject to the <em>EU-US Data Privacy
+                        Framework</em> and applicable contractual safeguards.</p>
+
+                <h3>7. Data retention and deletion</h3>
+                <p>All locally stored data (habits, progress, preferences) can be deleted at any time via
+                    <strong>Settings → Clear all data</strong> within the app, or by uninstalling the application. Data
+                    processed by third parties is governed by each service's own retention policies.
+                </p>
+
+                <h3>8. Your rights</h3>
+                <p>In accordance with applicable regulations (GDPR / LGPD depending on your region), you have the right
+                    to:</p>
+                <ul>
+                    <li>Access the data we hold about you.</li>
+                    <li>Request rectification or deletion of your data.</li>
+                    <li>Object to processing for marketing purposes.</li>
+                    <li>Lodge a complaint with the data protection authority in your country.</li>
+                </ul>
+                <p>Since we do not operate our own servers with personal data, most of these rights are exercised
+                    directly on your device or through the third-party services.</p>
+
+                <h3>9. Changes to this policy</h3>
+                <p>We may update this policy when necessary. The "last updated" date at the beginning of the document
+                    reflects the current version. We will notify you of significant changes in the app store description
+                    or through an app update.</p>
+            </section>
+
+            <!-- ══════════════════════════════════════════════
+                 SECTION 2 — TERMS AND CONDITIONS
+            ═══════════════════════════════════════════════ -->
+            <section class="policy-section" id="terms">
+                <div class="section-header">
+                    <div class="section-icon terms"><i class="bi bi-file-earmark-text-fill"></i></div>
+                    <div>
+                        <h2>Terms and Conditions</h2>
+                        <p class="section-date">Last updated: March 13, 2026</p>
+                    </div>
+                </div>
+
+                <div class="notice">
+                    By downloading or using <strong>Hábitos</strong>, you agree to these terms. If you do not agree,
+                    please do not use the application.
+                </div>
+
+                <h3>1. License</h3>
+                <p>We grant you a personal, non-exclusive, non-transferable, and revocable license to use the
+                    <strong>Hábitos</strong> application on devices you own or control, exclusively for personal and
+                    non-commercial use.
+                </p>
+
+                <h3>2. Account and access</h3>
+                <p>The application does not require account creation or registration. You do not need to provide
+                    personal data to use the basic features. For the Premium subscription, the payment process is
+                    handled entirely through Google Play or App Store with your Google/Apple account.</p>
+
+                <h3>3. Free version and limitations</h3>
+                <ul>
+                    <li>Free users can create up to <strong>3 habits</strong>.</li>
+                    <li>The free version displays ads from Google AdMob.</li>
+                    <li>Advanced features (extended statistics, cloud backup) are reserved for Premium users.</li>
+                </ul>
+
+                <h3>4. Premium subscription</h3>
+                <ul>
+                    <li>The Premium subscription is offered on a <strong>monthly</strong> basis with a 7-day free trial
+                        period.</li>
+                    <li>The exact price is shown on the purchase screen within the app, in your local currency.</li>
+                    <li>The subscription <strong>renews automatically</strong> at the end of each period unless you
+                        cancel at least 24 hours before the renewal date.</li>
+                    <li>You may cancel your subscription at any time from your account settings in Google Play or App
+                        Store. Cancellation takes effect at the end of the current billing period.</li>
+                    <li>If you use the free trial period, the subscription will activate automatically when the trial
+                        ends. Cancel before then if you do not wish to be charged.</li>
+                    <li>We do not offer refunds for already-billed periods, except where required by law or the
+                        applicable app store policy.</li>
+                </ul>
+
+                <h3>5. User conduct</h3>
+                <p>By using the application, you agree to:</p>
+                <ul>
+                    <li>Not attempt to decompile, reverse engineer, modify, or distribute the application or its source
+                        code.</li>
+                    <li>Not use the application for illegal purposes or in violation of these terms.</li>
+                    <li>Not attempt to circumvent the restrictions of the free version through technical means.</li>
+                </ul>
+
+                <h3>6. Intellectual property</h3>
+                <p>All rights to the application, including its code, design, graphics, name, and logo of
+                    <strong>Hábitos</strong>, are owned by Business Productivity Labs. These terms do not transfer any
+                    intellectual property rights to you.
+                </p>
+
+                <h3>7. Service availability</h3>
+                <p>We strive to keep the application available and functional, but we do not guarantee uninterrupted
+                    operation. We may update, modify, or discontinue the application or any of its features without
+                    prior notice.</p>
+
+                <h3>8. Limitation of liability</h3>
+                <p>The application is provided <strong>"as is"</strong> and <strong>"as available"</strong>, without
+                    express or implied warranties. To the maximum extent permitted by law:</p>
+                <ul>
+                    <li>We are not liable for loss of habit data or progress due to device failure, uninstallation, or
+                        system error.</li>
+                    <li>We do not guarantee that the application will meet your health, productivity, or wellness
+                        expectations.</li>
+                    <li>Our total liability to you shall not exceed the amount you have paid for the Premium
+                        subscription in the past 3 months.</li>
+                </ul>
+
+                <h3>9. Third-party services</h3>
+                <p>The application integrates third-party services (Google AdMob, RevenueCat) subject to their own terms
+                    of use. We are not responsible for the behavior or policies of these services. By using the app, you
+                    acknowledge that you are also subject to their terms.</p>
+
+                <h3>10. Modifications to these terms</h3>
+                <p>We may update these terms at any time. The updated version will be available at this same URL.
+                    Continued use of the application after changes are published constitutes acceptance of the new
+                    terms.</p>
+
+                <h3>11. Governing law</h3>
+                <p>These terms are governed by the laws of the Republic of Colombia. Any dispute that cannot be resolved
+                    amicably shall be submitted to the competent courts of that country.</p>
+
+                <h3>12. Severability</h3>
+                <p>If any provision of these terms is deemed invalid or unenforceable, the remaining provisions shall
+                    remain in full force and effect.</p>
+            </section>
+
+            <!-- ══════════════════════════════════════════════
+                 SECTION 3 — CONTACT
+            ═══════════════════════════════════════════════ -->
+            <section class="policy-section" id="contact">
+                <div class="section-header">
+                    <div class="section-icon contact"><i class="bi bi-envelope-fill"></i></div>
+                    <div>
+                        <h2>Contact</h2>
+                        <p class="section-date">Questions about privacy, subscriptions, or support?</p>
+                    </div>
+                </div>
+
+                <p>If you have questions about this Privacy Policy, the Terms of Use, or need technical support, you can
+                    reach us at:</p>
+
+                <div class="contact-grid">
+                    <div class="contact-item">
+                        <div class="label">Application</div>
+                        <div class="value">Hábitos</div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="label">Developer</div>
+                        <div class="value">Business Productivity Labs</div>
+                    </div>
+                    <div class="contact-item full">
+                        <div class="label">Email address</div>
+                        <div class="value"><a href="mailto:businessproductivitylabs@gmail.com"><i
+                                    class="bi bi-envelope me-1"></i>businessproductivitylabs@gmail.com</a></div>
+                    </div>
+                    <div class="contact-item full">
+                        <div class="label">Effective date</div>
+                        <div class="value">March 13, 2026</div>
+                    </div>
+                </div>
+
+                <p style="margin-top:20px; font-size:.85rem; color:var(--text-muted);">
+                    <i class="bi bi-clock me-1"></i> We will try to respond to all inquiries within a maximum of 5
+                    business days.
+                </p>
+            </section>
+
+        </div><!-- /lang-en -->
+
+    </div><!-- /content-wrap -->
+
+    <!-- ── Footer ───────────────────────────────────────── -->
     <footer>
-        <p>© 2026 Hábitos — Business Productivity Labs. Todos los derechos reservados.</p>
-        <p style="margin-top:6px;">
-            <a href="#privacidad" style="color:#6366F1; text-decoration:none; margin:0 8px;">Política de Privacidad</a>
-            <a href="#terminos" style="color:#6366F1; text-decoration:none; margin:0 8px;">Términos y Condiciones</a>
-            <a href="#contacto" style="color:#6366F1; text-decoration:none; margin:0 8px;">Contacto</a>
-        </p>
+        <img src="LogoEmpresa.png" alt="Business Productivity Labs" class="footer-logo"><br>
+        <strong>© 2026 Hábitos</strong> — Business Productivity Labs. Todos los derechos reservados.
+        <div class="footer-links">
+            <a href="#privacidad"><i class="bi bi-shield-lock"></i> Política de Privacidad</a>
+            <a href="#terminos"><i class="bi bi-file-earmark-text"></i> Términos y Condiciones</a>
+            <a href="#contacto"><i class="bi bi-envelope"></i> Contacto</a>
+        </div>
     </footer>
 
+    <!-- Bootstrap 5 JS bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        var navCfg = {
+            es: [
+                { href: '#privacidad', text: 'Política de Privacidad' },
+                { href: '#terminos', text: 'Términos y Condiciones' },
+                { href: '#contacto', text: 'Contacto' }
+            ],
+            en: [
+                { href: '#privacy', text: 'Privacy Policy' },
+                { href: '#terms', text: 'Terms & Conditions' },
+                { href: '#contact', text: 'Contact' }
+            ]
+        };
+
+        function setLang(lang, btn) {
+            document.querySelectorAll('.lang-section').forEach(function (el) {
+                el.classList.remove('visible');
+            });
+            document.querySelectorAll('.lang-btn').forEach(function (b) {
+                b.classList.remove('active');
+            });
+            document.getElementById('lang-' + lang).classList.add('visible');
+            btn.classList.add('active');
+
+            var links = document.querySelectorAll('#nav-links a');
+            navCfg[lang].forEach(function (item, i) {
+                links[i].href = item.href;
+                links[i].querySelector('span').textContent = item.text;
+            });
+        }
+    </script>
 </body>
 
 </html>
